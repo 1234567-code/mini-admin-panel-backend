@@ -19,6 +19,7 @@ use app\Http\Controllers\EmployeeController;
 
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('all-companies', [App\Http\Controllers\CompanyController::class, 'index']);
+    Route::get('get-all-companies', [App\Http\Controllers\CompanyController::class, 'get_all_companies']);
     Route::post('company/create', [App\Http\Controllers\CompanyController::class, 'store']);
     Route::post('company/update/{id}', [App\Http\Controllers\CompanyController::class, 'update']);
     Route::post('company/delete/{id}', [App\Http\Controllers\CompanyController::class, 'destroy']);

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Model;
 
 class CompanyModel extends Model
@@ -18,6 +19,6 @@ class CompanyModel extends Model
 
     public function employees()
     {
-        return hasMany(EmployeeModel::class, 'company_id', 'id');
+        return $this->hasMany(EmployeeModel::class, 'company_id', 'id');
     }
 }

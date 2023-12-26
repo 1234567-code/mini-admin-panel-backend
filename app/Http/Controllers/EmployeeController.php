@@ -12,7 +12,7 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        $employees = EmployeeModel::paginate(2);
+        $employees = EmployeeModel::with("company")->paginate(2);
         return $employees;
     }
 
@@ -113,7 +113,6 @@ class EmployeeController extends Controller
      */
     public function destroy(string $id)
     {
-        return $id;
         try{
             $employee = EmployeeModel::where('id', $id)->delete();
             if($employee){

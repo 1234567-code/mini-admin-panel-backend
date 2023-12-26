@@ -21,6 +21,15 @@ class CompanyController extends Controller
     }
 
     /**
+     * Display all companies.
+     */
+    public function get_all_companies()
+    {
+        $companies = CompanyModel::all();
+        return $companies;
+    }
+
+    /**
      * Show the form for creating a new resource.
      */
     public function create()
